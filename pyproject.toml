@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "pdf-table-extractor"
+version = "0.1.0"
+description = "Extract tables from PDFs into CSV, Excel, or JSON — fast CLI tool."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Ramanuj Sarkar", email = "" }]
+keywords = ["pdf", "table", "extraction", "cli", "document-ai", "data"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Text Processing :: General",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "pdfplumber>=0.10.0",
+    "pandas>=2.0.0",
+    "openpyxl>=3.1.0",
+    "click>=8.1.0",
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+    "camelot-py[cv]",   # optional fallback extractor
+]
+
+[project.scripts]
+pdf-extract = "pdf_table_extractor.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Ramanuj-Sarkar/pdf-table-extractor"
+"Bug Tracker" = "https://github.com/Ramanuj-Sarkar/pdf-table-extractor/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pdf_table_extractor*"]
