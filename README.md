@@ -9,7 +9,7 @@ A fast, zero-config CLI tool to extract tables from PDF files and export them as
 Built for real-world documents — including pharmaceutical Batch Manufacturing Records (BMRs), lab reports, financial statements, and regulatory filings.
 
 ---
-
+<!--
 ## Features
 
 - 📄 Extracts all tables across all pages (or a subset of pages)
@@ -152,7 +152,7 @@ pytest tests/ -v
 - Complex merged-cell layouts may require manual post-processing.
 
 ---
-
+-->
 ## License
 
 MIT
