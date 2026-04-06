@@ -54,7 +54,7 @@ def extract_tables_from_pdf(
                 header = clean_header(header)
 
                 df = pd.DataFrame(rows, columns=header)
-                df = df.fillna("").applymap(lambda x: str(x).strip() if x else "")
+                df = df.fillna("").map(lambda x: str(x).strip() if x else "")
 
                 # Drop fully-empty rows
                 df = df[df.apply(lambda r: r.str.strip().any(), axis=1)].reset_index(drop=True)
